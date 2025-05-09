@@ -1,19 +1,19 @@
 {
-  "name": "Nexters",
+  "name": "qr-code-component",
   "version": "1.0.0",
-  "description": "Ehi's Nexters Project",
+  "description": "Ehi's  qr-code-component",
   "main": "index.js",
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.78.0"
+    "sass": "^1.80.4"
   },
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "watch:sass": "sass --watch sass/main.scss css/style.css",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css  -o css/style.prefix.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css" 
+    "compress:css": "sass css/style.prefix.css css/style.css -s compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Ehinomen",
   "license": "ISC"
